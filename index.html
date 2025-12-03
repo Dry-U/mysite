@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dar1an | Portfolio and others</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 复制提示框 -->
+    <div id="copy-toast">邮箱已复制 / Email Copied</div>
+
+    <!-- 导航栏 -->
+    <header id="navbar">
+        <div class="logo" data-target="home">
+            <img src="https://img.dar1an.dpdns.org/Picgo/2025/12-02-20-26-13.jpg" alt="Avatar">
+            <span>Dar1an</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li>
+                    <a href="#home" class="nav-anchor" data-target="home">
+                        <div class="nav-link-item">
+                            <span class="en">Home</span>
+                            <span class="cn">主页</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#blog" class="nav-anchor" data-target="blog">
+                        <div class="nav-link-item">
+                            <span class="en">Blog</span>
+                            <span class="cn">博客</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#portfolio" class="nav-anchor" data-target="portfolio">
+                        <div class="nav-link-item">
+                            <span class="en">Works</span>
+                            <span class="cn">作品</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#share" class="nav-anchor" data-target="share">
+                        <div class="nav-link-item">
+                            <span class="en">Share</span>
+                            <span class="cn">分享</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 左侧侧边栏 -->
+    <aside class="sidebar-social">
+        <a href="https://github.com/Dry-U" target="_blank" class="social-btn" title="GitHub"><i class="ri-github-fill"></i></a>
+        <a href="https://x.com/Dar1an12?s=09" target="_blank" class="social-btn" title="X"><i class="ri-twitter-x-fill"></i></a>
+        <a href="https://www.douyin.com/user/MS4wLjABAAAAErKu8J3wa7xio2BqmIjNznDI3i5UZaXQRAzH9EpOR9Y?from_tab_name=main" target="_blank" class="social-btn" title="Douyin"><i class="ri-tiktok-fill"></i></a>
+        
+        <div class="social-btn email-container" onclick="copyEmail()">
+            <i class="ri-mail-fill"></i>
+            <span class="email-text">hwe2377@gmail.com (Click to Copy)</span>
+        </div>
+    </aside>
+
+    <main>
+        <!-- 1. 主页 (Home) -->
+        <section id="home">
+            <div class="hero-text">
+                <div class="text-group">
+                    <p class="en" style="color: var(--text-muted);">UI/UX DESIGNER & DEVELOPER</p>
+                    <p class="cn">界面设计 / 前端开发</p>
+                </div>
+                <br>
+                <div class="text-group">
+                    <h1 class="en">Hello,<br>I am Dar1an.</h1>
+                    <h1 class="cn" style="font-size: 1.5rem; font-weight:300; color:#aaa;">你好，我是 Dar1an。</h1>
+                </div>
+                <br>
+                <div class="text-group">
+                    <p class="en" style="color: var(--text-muted);">Exploring the boundaries between design and code.</p>
+                    <p class="cn">探索设计与代码的边界，构建极致的数字体验。</p>
+                </div>
+
+                <a href="#share" class="btn-connect nav-anchor" data-target="share">
+                    <span class="en">Check Resources</span>
+                    <span class="cn">查看分享与工具</span>
+                </a>
+            </div>
+            
+            <div class="hero-img">
+                <img src="https://img.dar1an.dpdns.org/Picgo/2025/12-02-20-24-54.png" alt="Personal Photo">
+            </div>
+        </section>
+
+        <!-- 2. 博客 (Blog) -->
+        <section id="blog">
+            <h2 class="section-title">
+                <span class="sub">Thinking / 思考</span>
+                <div class="text-group">
+                    <span class="en">Latest Articles</span>
+                    <span class="cn" style="font-size: 1.2rem;">最新博客文章</span>
+                </div>
+            </h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-date">2023.10.24</div>
+                    <div class="text-group">
+                        <h3 class="en">Minimalism in Web Design</h3>
+                        <h3 class="cn">极简主义在网页设计中的应用</h3>
+                        <p class="cn" style="margin-top:10px;">探讨如何在做减法的同时保持功能的完整性...</p>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-date">2023.09.15</div>
+                    <div class="text-group">
+                        <h3 class="en">The Art of Dark Mode</h3>
+                        <h3 class="cn">深色模式的设计艺术</h3>
+                        <p class="cn" style="margin-top:10px;">为什么高端品牌都喜欢使用纯黑背景？</p>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-date">2023.08.01</div>
+                    <div class="text-group">
+                        <h3 class="en">Refactoring Digital Garden</h3>
+                        <h3 class="cn">重构我的数字花园</h3>
+                        <p class="cn" style="margin-top:10px;">从零开始搭建个人知识库的技术栈选择。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 3. 作品 (Works) -->
+        <section id="portfolio">
+            <h2 class="section-title">
+                <span class="sub">Selected Works / 作品集</span>
+                <div class="text-group">
+                    <span class="en">Portfolio Showcase</span>
+                    <span class="cn" style="font-size: 1.2rem;">精选项目展示</span>
+                </div>
+            </h2>
+            <div class="works-gallery">
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1481487484168-9b9307527387?q=80&w=2670&auto=format&fit=crop" alt="Project 1">
+                    <div class="work-info text-group">
+                        <h4 class="en">Project Alpha</h4>
+                        <p class="cn">企业级 Web 设计系统</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2670&auto=format&fit=crop" alt="Project 2">
+                    <div class="work-info text-group">
+                        <h4 class="en">System UI</h4>
+                        <p class="cn">后台数据可视化界面</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 分享 (Share) -->
+        <section id="share">
+            <h2 class="section-title">
+                <span class="sub">Tools & Resources / 工具资源</span>
+                <div class="text-group">
+                    <span class="en">Worth Sharing</span>
+                    <span class="cn" style="font-size: 1.2rem;">好用的工具与网站推荐</span>
+                </div>
+            </h2>
+
+            <div class="share-grid">
+                <a href="https://www.figma.com/" target="_blank" class="tool-card">
+                    <div class="tool-icon"><i class="ri-pencil-ruler-2-fill"></i></div>
+                    <div class="text-group">
+                        <span class="en" style="font-weight:bold;">Figma</span>
+                        <span class="cn">最强大的界面协作设计工具。</span>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/" target="_blank" class="tool-card">
+                    <div class="tool-icon"><i class="ri-github-fill"></i></div>
+                    <div class="text-group">
+                        <span class="en" style="font-weight:bold;">GitHub</span>
+                        <span class="cn">全球最大的开源代码托管平台。</span>
+                    </div>
+                </a>
+
+                <a href="https://dribbble.com/" target="_blank" class="tool-card">
+                    <div class="tool-icon"><i class="ri-dribbble-line"></i></div>
+                    <div class="text-group">
+                        <span class="en" style="font-weight:bold;">Dribbble</span>
+                        <span class="cn">寻找顶级设计师的灵感社区。</span>
+                    </div>
+                </a>
+                
+                <a href="https://vercel.com/" target="_blank" class="tool-card">
+                    <div class="tool-icon"><i class="ri-cloud-windy-fill"></i></div>
+                    <div class="text-group">
+                        <span class="en" style="font-weight:bold;">Vercel</span>
+                        <span class="cn">极速的前端部署与托管平台。</span>
+                    </div>
+                </a>
+            </div>
+
+            <footer>
+                <div class="text-group">
+                    <span class="en">&copy; 2025 Dar1an. All Rights Reserved.</span>
+                    <span class="cn">保留所有权利。</span>
+                </div>
+            </footer>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
