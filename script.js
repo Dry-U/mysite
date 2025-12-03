@@ -26,10 +26,14 @@ function smoothScrollTo(targetPosition) {
 // 为所有导航链接添加点击事件
 document.querySelectorAll('.nav-anchor').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault(); // 阻止默认的锚点跳转
-        const targetId = this.getAttribute('data-target');
-        const targetPosition = getScrollPosition(targetId);
-        smoothScrollTo(targetPosition);
+        // 只有当链接是锚点链接（以 # 开头）时，才阻止默认行为并执行平滑滚动
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+            e.preventDefault(); 
+            const targetId = this.getAttribute('data-target');
+            const targetPosition = getScrollPosition(targetId);
+            smoothScrollTo(targetPosition);
+        }
     });
 });
 
@@ -37,7 +41,12 @@ document.querySelectorAll('.nav-anchor').forEach(anchor => {
 const logo = document.querySelector('.logo');
 if (logo) {
     logo.addEventListener('click', function() {
-        smoothScrollTo(0);
+        // 如果当前不在主页，则跳转回主页
+        if (!window.location.pathname.endsWith('index.html') && window.location.pathname !== '/') {
+            window.location.href = 'index.html';
+        } else {
+            smoothScrollTo(0);
+        }
     });
 }
 
@@ -50,6 +59,9 @@ function updateActiveNav() {
     const vh = window.innerHeight;
     
     let currentSection = 'home';
+
+    // 如果页面中没有这些 section（比如在子页面），则不执行高亮逻辑
+    if (!document.getElementById('home')) return;
 
     if (window.innerWidth <= 768) {
         // 移动端基于元素位置判断

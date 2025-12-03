@@ -216,6 +216,24 @@ h2.section-title span.sub {
     text-transform: uppercase;
 }
 
+/* 章节标题链接化：保持纵向排版同时可点击 */
+.section-title .text-group {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.section-link {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.section-link:hover .en,
+.section-link:hover .cn {
+    color: var(--text-main);
+}
+
 /* --- HOME SECTION --- */
 #home {
     flex-direction: row;

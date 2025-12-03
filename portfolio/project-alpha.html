@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Alpha | Dar1an</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../subpage.css">
+</head>
+<body class="subpage">
+
+    <!-- 导航栏 -->
+    <header id="navbar" style="background: rgba(5, 5, 5, 0.9);">
+        <div class="logo" onclick="window.location.href='../index.html'">
+            <img src="https://img.dar1an.dpdns.org/Picgo/2025/12-02-20-26-13.jpg" alt="Avatar">
+            <span>Dar1an</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li>
+                    <a href="../index.html">
+                        <div class="nav-link-item">
+                            <span class="en">Home</span>
+                            <span class="cn">主页</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="../blog/index.html">
+                        <div class="nav-link-item">
+                            <span class="en">Blog</span>
+                            <span class="cn">博客</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="active">
+                        <div class="nav-link-item">
+                            <span class="en">Works</span>
+                            <span class="cn">作品</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="../share/index.html">
+                        <div class="nav-link-item">
+                            <span class="en">Share</span>
+                            <span class="cn">分享</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <article class="article-container">
+        <a href="index.html" class="back-link"><i class="ri-arrow-left-line"></i> Back to Portfolio</a>
+        
+            <h1 class="article-title">Project Alpha: Enterprise Design System</h1>
+            <div class="article-meta">
+                <span><i class="ri-calendar-line"></i> 2023</span>
+                <span><i class="ri-tools-line"></i> Figma, React, Storybook</span>
+            </div>
+
+        <div class="article-content">
+            <img src="https://img.dar1an.dpdns.org/Picgo/2025/10-29-18-31-57.jpg" alt="Project Cover">
+
+            <h2>项目背景</h2>
+            <p>随着公司业务的快速扩张，原有的设计规范已经无法满足日益增长的需求。不同产品线之间的视觉风格不统一，开发效率低下，重复造轮子现象严重。Project Alpha 旨在建立一套统一、灵活且高效的设计系统。</p>
+
+            <h2>设计目标</h2>
+            <ul>
+                <li><strong>一致性：</strong> 统一全线产品的视觉语言和交互模式。</li>
+                <li><strong>效率：</strong> 提供即插即用的组件库，减少设计和开发时间。</li>
+                <li><strong>可扩展性：</strong> 能够适应未来业务的发展和变化。</li>
+            </ul>
+
+            <h2>解决方案</h2>
+            <h3>1. 原子设计理论</h3>
+            <p>我们采用了原子设计（Atomic Design）的方法论，从最基础的颜色、字体、图标（原子）开始，逐步构建出按钮、输入框（分子），再组合成导航栏、卡片（生物），最终形成完整的页面。</p>
+
+            <h3>2. 动态 Token 系统</h3>
+            <p>为了支持多主题（如深色模式），我们引入了 Design Tokens。所有的颜色、间距、圆角都通过 Token 进行管理，只需修改 Token 的值，即可实现全局样式的切换。</p>
+
+            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2670&auto=format&fit=crop" alt="Design System Components">
+
+            <h2>成果</h2>
+            <p>Project Alpha 上线后，设计交付效率提升了 40%，前端开发代码复用率达到了 70%。更重要的是，用户对产品的一致性体验给予了高度评价。</p>
+        </div>
+    </article>
+
+    <footer>
+        <div class="text-group">
+            <span class="en">&copy; 2025 Dar1an. All Rights Reserved.</span>
+        </div>
+    </footer>
+
+</body>
+</html>
