@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = [
+  {
+    slug: 'minimalism',
+    date: '2023.10.24',
+    titleEn: 'Minimalism in Web Design',
+    titleCn: '极简主义在网页设计中的应用',
+    excerpt: '探讨如何在做减法的同时保持功能的完整性...'
+  },
+  {
+    slug: 'dark-mode',
+    date: '2023.09.15',
+    titleEn: 'The Art of Dark Mode',
+    titleCn: '深色模式的设计艺术',
+    excerpt: '为什么高端品牌都喜欢使用纯黑背景？'
+  },
+  {
+    slug: 'digital-garden',
+    date: '2023.08.01',
+    titleEn: 'Refactoring Digital Garden',
+    titleCn: '重构我的数字花园',
+    excerpt: '从零开始搭建个人知识库的技术栈选择。'
+  }
+];
+---
+
+<BaseLayout title="Blog | Dar1an" description="思考与博客文章">
+  <div class="page-content">
+    <header class="page-header">
+      <h1 class="page-title">
+        <span class="en">Blog</span>
+        <span class="cn">博客文章</span>
+      </h1>
+      <p class="page-desc">关于设计、代码和数字生活的思考。</p>
+    </header>
+
+    <div class="posts-list">
+      {posts.map(post => (
+        <article class="post-item">
+          <time class="post-date">{post.date}</time>
+          <a href={`/blog/${post.slug}/`} class="post-link">
+            <h2 class="post-title">
+              <span class="en">{post.titleEn}</span>
+              <span class="cn">{post.titleCn}</span>
+            </h2>
+          </a>
+          <p class="post-excerpt">{post.excerpt}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-content {
+    padding: 120px 10% 50px;
+    padding-left: 140px;
+    min-height: 100vh;
+    max-width: 1000px;
+  }
+
+  .page-header {
+    margin-bottom: 60px;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 15px;
+  }
+
+  .page-title .cn {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-top: 10px;
+  }
+
+  .page-desc {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+  }
+
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .post-item {
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .post-date {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
+  .post-link {
+    display: block;
+    margin: 15px 0;
+  }
+
+  .post-link:hover .en,
+  .post-link:hover .cn {
+    color: var(--text-main);
+  }
+
+  .post-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .post-title .cn {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+  }
+
+  .post-excerpt {
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    .page-content {
+      padding: 100px 5% 100px;
+    }
+
+    .page-title {
+      font-size: 2rem;
+    }
+  }
+</style>

@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Project Alpha | Dar1an" description="企业级 Web 设计系统">
+  <article class="project-detail">
+    <header class="project-header">
+      <span class="project-category">Design System</span>
+      <h1 class="project-title">
+        <span class="en">Project Alpha</span>
+        <span class="cn">企业级 Web 设计系统</span>
+      </h1>
+    </header>
+
+    <div class="project-image-full">
+      <img src="https://img.dar1an.dpdns.org/Picgo/2025/10-29-18-31-57.jpg" alt="Project Alpha" />
+    </div>
+
+    <div class="project-content">
+      <section class="project-section">
+        <h2>项目概述</h2>
+        <p>Project Alpha 是一个面向企业级应用的 Web 设计系统。它包含了完整的组件库、设计规范和开发指南，帮助团队快速构建一致性的用户界面。</p>
+      </section>
+
+      <section class="project-section">
+        <h2>设计目标</h2>
+        <ul>
+          <li>建立统一的设计语言和视觉规范</li>
+          <li>提高开发效率，减少重复工作</li>
+          <li>确保跨产品的一致用户体验</li>
+          <li>支持快速迭代和扩展</li>
+        </ul>
+      </section>
+
+      <section class="project-section">
+        <h2>技术栈</h2>
+        <p>Figma, React, TypeScript, Storybook, TailwindCSS</p>
+      </section>
+    </div>
+
+    <footer class="project-footer">
+      <a href="/portfolio/" class="back-link">
+        ← <span class="en">Back to Portfolio</span>
+        <span class="cn">返回作品集</span>
+      </a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .project-detail {
+    padding: 120px 10% 50px;
+    padding-left: 140px;
+    min-height: 100vh;
+    max-width: 1200px;
+  }
+
+  .project-header {
+    margin-bottom: 40px;
+  }
+
+  .project-category {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .project-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-top: 15px;
+  }
+
+  .project-title .cn {
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    margin-top: 10px;
+  }
+
+  .project-image-full {
+    margin-bottom: 60px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .project-image-full img {
+    width: 100%;
+    height: auto;
+  }
+
+  .project-content {
+    max-width: 800px;
+  }
+
+  .project-section {
+    margin-bottom: 50px;
+  }
+
+  .project-section h2 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: var(--text-main);
+  }
+
+  .project-section p {
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .project-section ul {
+    margin-left: 20px;
+    color: var(--text-muted);
+    line-height: 2;
+  }
+
+  .project-footer {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .back-link {
+    display: inline-flex;
+    flex-direction: column;
+    color: var(--text-muted);
+  }
+
+  .back-link:hover {
+    color: var(--text-main);
+  }
+
+  .back-link .cn {
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 768px) {
+    .project-detail {
+      padding: 100px 5% 100px;
+    }
+
+    .project-title {
+      font-size: 1.8rem;
+    }
+  }
+</style>

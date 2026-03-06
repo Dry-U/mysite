@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const blogPosts = [
+    {
+        date: '2023.10.24',
+        titleEn: 'Minimalism in Web Design',
+        titleCn: '极简主义在网页设计中的应用',
+        excerpt: '探讨如何在做减法的同时保持功能的完整性...',
+        url: '/blog/minimalism/'
+    },
+    {
+        date: '2023.09.15',
+        titleEn: 'The Art of Dark Mode',
+        titleCn: '深色模式的设计艺术',
+        excerpt: '为什么高端品牌都喜欢使用纯黑背景？',
+        url: '/blog/'
+    },
+    {
+        date: '2023.08.01',
+        titleEn: 'Refactoring Digital Garden',
+        titleCn: '重构我的数字花园',
+        excerpt: '从零开始搭建个人知识库的技术栈选择。',
+        url: '/blog/'
+    }
+];
+
+const works = [
+    {
+        titleEn: 'Project Alpha',
+        titleCn: '企业级 Web 设计系统',
+        image: 'https://img.dar1an.dpdns.org/Picgo/2025/10-29-18-31-57.jpg',
+        url: '/portfolio/project-alpha/'
+    },
+    {
+        titleEn: 'System UI',
+        titleCn: '后台数据可视化界面',
+        image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2670&auto=format&fit=crop',
+        url: '/portfolio/'
+    }
+];
+
+const tools = [
+    { name: 'Figma', desc: '最强大的界面协作设计工具。', icon: 'ri-pencil-ruler-2-fill' },
+    { name: 'GitHub', desc: '全球最大的开源代码托管平台。', icon: 'ri-github-fill' },
+    { name: 'Dribbble', desc: '寻找顶级设计师的灵感社区。', icon: 'ri-dribbble-line' },
+    { name: 'Vercel', desc: '极速的前端部署与托管平台。', icon: 'ri-cloud-windy-fill' }
+];
+---
+
+<BaseLayout>
+    <!-- 1. 主页 (Home) -->
+    <section id="home">
+        <div class="hero-text">
+            <div class="text-group">
+                <p class="en" style="color: var(--text-muted);">UI/UX DESIGNER & DEVELOPER</p>
+                <p class="cn">界面设计 / 前端开发</p>
+            </div>
+            <br>
+            <div class="text-group">
+                <h1 class="en">Hello,<br>I am Dar1an.</h1>
+                <h1 class="cn" style="font-size: 1.5rem; font-weight:300; color:#aaa;">你好，我是 Dar1an。</h1>
+            </div>
+            <br>
+            <div class="text-group">
+                <p class="en" style="color: var(--text-muted);">Exploring the boundaries between design and code.</p>
+                <p class="cn">探索设计与代码的边界，构建极致的数字体验。</p>
+            </div>
+
+            <a href="/share/" class="btn-connect">
+                <span class="en">Check Resources</span>
+                <span class="cn">查看分享与工具</span>
+            </a>
+        </div>
+
+        <div class="hero-img">
+            <img src="https://img.dar1an.dpdns.org/Picgo/2025/12-02-20-24-54.png" alt="Personal Photo">
+        </div>
+    </section>
+
+    <!-- 2. 博客 (Blog) -->
+    <section id="blog">
+        <h2 class="section-title">
+            <span class="sub">Thinking / 思考</span>
+            <div class="text-group">
+                <a href="/blog/" class="section-link">
+                    <span class="en">Latest Articles</span>
+                    <span class="cn" style="font-size: 1.2rem;">最新博客文章</span>
+                </a>
+            </div>
+        </h2>
+        <div class="blog-grid">
+            {blogPosts.map(post => (
+                <a href={post.url} class="blog-card">
+                    <div class="blog-date">{post.date}</div>
+                    <div class="text-group">
+                        <h3 class="en">{post.titleEn}</h3>
+                        <h3 class="cn">{post.titleCn}</h3>
+                        <p class="cn" style="margin-top:10px;">{post.excerpt}</p>
+                    </div>
+                </a>
+            ))}
+        </div>
+    </section>
+
+    <!-- 3. 作品 (Works) -->
+    <section id="portfolio">
+        <h2 class="section-title">
+            <span class="sub">Selected Works / 作品集</span>
+            <div class="text-group">
+                <a href="/portfolio/" class="section-link">
+                    <span class="en">Portfolio Showcase</span>
+                    <span class="cn" style="font-size: 1.2rem;">精选项目展示</span>
+                </a>
+            </div>
+        </h2>
+        <div class="works-gallery">
+            {works.map(work => (
+                <a href={work.url} class="work-item">
+                    <img src={work.image} alt={work.titleEn}>
+                    <div class="work-info text-group">
+                        <h4 class="en">{work.titleEn}</h4>
+                        <p class="cn">{work.titleCn}</p>
+                    </div>
+                </a>
+            ))}
+        </div>
+    </section>
+
+    <!-- 4. 分享 (Share) -->
+    <section id="share">
+        <h2 class="section-title">
+            <span class="sub">Tools & Resources / 工具资源</span>
+            <div class="text-group">
+                <a href="/share/" class="section-link">
+                    <span class="en">Worth Sharing</span>
+                    <span class="cn" style="font-size: 1.2rem;">好用的工具与网站推荐</span>
+                </a>
+            </div>
+        </h2>
+
+        <div class="share-grid">
+            {tools.map(tool => (
+                <a href="/share/" class="tool-card">
+                    <div class="tool-icon"><i class={tool.icon}></i></div>
+                    <div class="text-group">
+                        <span class="en" style="font-weight:bold;">{tool.name}</span>
+                        <span class="cn">{tool.desc}</span>
+                    </div>
+                </a>
+            ))}
+        </div>
+
+        <footer>
+            <div class="text-group">
+                <span class="en">&copy; 2025 Dar1an. All Rights Reserved.</span>
+                <span class="cn">保留所有权利。</span>
+            </div>
+        </footer>
+    </section>
+</BaseLayout>
+
+<script>
+    // 堆叠滚动导航
+    const sectionOrder = ['home', 'blog', 'portfolio', 'share'];
+
+    function getScrollPosition(targetId: string) {
+        const index = sectionOrder.indexOf(targetId);
+        if (index === -1) return 0;
+        if (window.innerWidth <= 768) {
+            const element = document.getElementById(targetId);
+            return element ? element.offsetTop : 0;
+        }
+        return index * window.innerHeight;
+    }
+
+    function smoothScrollTo(targetPosition: number) {
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    }
+
+    // 为所有导航链接添加点击事件
+    document.querySelectorAll('.nav-anchor').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target');
+                if (targetId) {
+                    const targetPosition = getScrollPosition(targetId);
+                    smoothScrollTo(targetPosition);
+                }
+            }
+        });
+    });
+
+    // 导航高亮
+    const navAnchors = document.querySelectorAll('.nav-anchor');
+
+    function updateActiveNav() {
+        const scrollY = window.scrollY;
+        const vh = window.innerHeight;
+
+        let currentSection = 'home';
+
+        if (!document.getElementById('home')) return;
+
+        if (window.innerWidth <= 768) {
+            for (const id of sectionOrder) {
+                const element = document.getElementById(id);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= vh / 3 && rect.bottom >= vh / 3) {
+                        currentSection = id;
+                        break;
+                    }
+                }
+            }
+        } else {
+            let currentIndex = Math.round(scrollY / vh);
+            currentIndex = Math.min(currentIndex, sectionOrder.length - 1);
+            currentIndex = Math.max(currentIndex, 0);
+            currentSection = sectionOrder[currentIndex];
+        }
+
+        navAnchors.forEach(anchor => {
+            if (anchor.getAttribute('data-target') === currentSection) {
+                anchor.classList.add('active');
+            } else {
+                anchor.classList.remove('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveNav);
+    updateActiveNav();
+</script>

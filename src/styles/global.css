@@ -8,14 +8,13 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-/* 移除 html 的 scroll-behavior，由 JS 控制 */
 
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    height: 100%; 
+    height: 100%;
 }
 
 a { text-decoration: none; color: inherit; transition: 0.3s; }
@@ -68,7 +67,7 @@ header.scrolled {
     font-size: 1.2rem;
     letter-spacing: 1px;
     z-index: 1001;
-    cursor: pointer; /* 让 Logo 可点击 */
+    cursor: pointer;
 }
 
 .logo img {
@@ -95,7 +94,6 @@ header.scrolled {
 .nav-links a:hover .nav-link-item { color: var(--text-main); }
 .nav-links a:hover .cn { display: block; opacity: 1; margin-top: 0; }
 
-/* 当前激活的导航项 */
 .nav-links a.active .nav-link-item { color: var(--text-main); }
 .nav-links a.active .cn { display: block; opacity: 1; margin-top: 0; }
 
@@ -182,18 +180,15 @@ section {
     position: sticky;
     top: 0;
     height: 100vh;
-    
     padding: 100px 10% 50px;
     padding-left: 140px;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
     background-color: var(--bg-color);
     box-shadow: 0 -15px 30px rgba(0,0,0,0.8);
     border-top: 1px solid #111;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 #home { z-index: 1; box-shadow: none; border-top: none; }
@@ -216,7 +211,6 @@ h2.section-title span.sub {
     text-transform: uppercase;
 }
 
-/* 章节标题链接化：保持纵向排版同时可点击 */
 .section-title .text-group {
     display: inline-flex;
     flex-direction: column;
@@ -310,13 +304,19 @@ h2.section-title span.sub {
 }
 .blog-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.2); }
 
+.blog-date {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
 /* --- PORTFOLIO SECTION --- */
 .works-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     max-height: 70vh;
-    overflow-y: auto; 
+    overflow-y: auto;
 }
 .works-gallery::-webkit-scrollbar { display: none; }
 
@@ -371,7 +371,6 @@ footer {
 
 /* --- 移动端适配 --- */
 @media (max-width: 768px) {
-    /* 修复：移动端显示底部社交栏 */
     .sidebar-social {
         display: flex;
         flex-direction: row;
@@ -387,9 +386,9 @@ footer {
         transform: none;
         justify-content: space-around;
         padding: 0 20px;
-        z-index: 2000; /* 提高层级 */
+        z-index: 2000;
     }
-    
+
     .sidebar-social::before, .sidebar-social::after {
         display: none;
     }
@@ -400,20 +399,20 @@ footer {
         transform: translateX(-50%);
         margin-bottom: 10px;
     }
-    
+
     .email-container:hover .email-text {
         transform: translateX(-50%);
     }
 
-    section { 
-        padding-left: 5%; 
-        padding-right: 5%; 
-        position: relative; 
-        height: auto; 
-        min-height: 100vh; 
-        padding-bottom: 80px; /* 为底部栏留出空间 */
+    section {
+        padding-left: 5%;
+        padding-right: 5%;
+        position: relative;
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 80px;
     }
-    
+
     #home { flex-direction: column-reverse; padding-top: 100px; }
     .hero-text { padding-right: 0; margin-top: 30px; text-align: center; }
     .hero-img { height: 50vh; width: 100%; }
