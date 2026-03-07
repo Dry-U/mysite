@@ -38,7 +38,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* --- 2. 顶部透明导航栏 --- */
-header {
+#navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -53,7 +53,7 @@ header {
     background: transparent;
 }
 
-header.scrolled {
+#navbar.scrolled {
     background: rgba(5, 5, 5, 0.8);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -192,9 +192,10 @@ section {
 }
 
 #home { z-index: 1; box-shadow: none; border-top: none; }
-#blog { z-index: 2; }
-#portfolio { z-index: 3; }
-#share { z-index: 4; }
+#skills { z-index: 2; }
+#blog { z-index: 3; }
+#portfolio { z-index: 4; }
+#share { z-index: 5; }
 
 h2.section-title {
     font-size: 2.5rem;
@@ -331,6 +332,71 @@ h2.section-title span.sub {
 .work-item:hover img { transform: scale(1.05); opacity: 1; }
 .work-info { position: absolute; bottom: 20px; left: 20px; z-index: 2; }
 
+/* --- SKILLS SECTION --- */
+.skills-showcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.skill-block {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 35px;
+  transition: all 0.3s ease;
+}
+
+.skill-block:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-8px);
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.skill-header i {
+  font-size: 1.8rem;
+  color: var(--text-muted);
+}
+
+.skill-cat {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.skill-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill-items li {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  padding-left: 15px;
+  position: relative;
+}
+
+.skill-items li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: rgba(255,255,255,0.2);
+}
+
+.skills-cta {
+  margin-top: 50px;
+  text-align: center;
+}
+
 /* --- SHARE SECTION --- */
 #share {
     background-color: #080808;
@@ -407,9 +473,9 @@ footer {
     section {
         padding-left: 5%;
         padding-right: 5%;
-        position: relative;
-        height: auto;
-        min-height: 100vh;
+        position: sticky;
+        top: 0;
+        height: 100vh;
         padding-bottom: 80px;
     }
 
@@ -417,6 +483,8 @@ footer {
     .hero-text { padding-right: 0; margin-top: 30px; text-align: center; }
     .hero-img { height: 50vh; width: 100%; }
     .works-gallery { grid-template-columns: 1fr; height: auto; }
+    .skills-showcase { grid-template-columns: 1fr; gap: 20px; }
+    .skill-block { padding: 25px; }
     header { padding: 0 20px; }
     .nav-links { display: none; }
     .logo { font-size: 1rem; }

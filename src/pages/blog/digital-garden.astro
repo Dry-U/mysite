@@ -39,14 +39,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <style>
   .blog-post {
-    padding: 120px 10% 50px;
+    padding: 140px 10% 50px;
     padding-left: 140px;
     min-height: 100vh;
-    max-width: 900px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .post-header {
     margin-bottom: 50px;
+  }
+
+  .post-content {
+    line-height: 1.9;
+    color: #ccc;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .post-content p,
+  .post-content h2,
+  .post-content ul {
+    max-width: 100%;
   }
 
   .post-date {
@@ -65,11 +79,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     font-size: 1.3rem;
     color: var(--text-muted);
     margin-top: 10px;
-  }
-
-  .post-content {
-    line-height: 1.9;
-    color: #ccc;
   }
 
   .post-content p {
@@ -115,10 +124,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   @media (max-width: 768px) {
     .blog-post {
       padding: 100px 5% 100px;
+      padding-left: 5%;
     }
 
     .post-title {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
+    }
+
+    .post-title .cn {
+      font-size: 1rem;
+    }
+
+    .post-content p,
+    .post-content h2,
+    .post-content ul {
+      max-width: 100%;
     }
   }
 </style>

@@ -46,6 +46,12 @@ const tools = [
     { name: 'Dribbble', desc: '寻找顶级设计师的灵感社区。', icon: 'ri-dribbble-line' },
     { name: 'Vercel', desc: '极速的前端部署与托管平台。', icon: 'ri-cloud-windy-fill' }
 ];
+
+const skills = [
+    { category: 'Design', icon: 'ri-palette-line', items: ['UI/UX Design', 'Design Systems', 'Figma'] },
+    { category: 'Frontend', icon: 'ri-code-box-line', items: ['HTML5 / CSS3', 'JavaScript', 'React / Astro'] },
+    { category: 'Tools', icon: 'ri-tools-line', items: ['Git / GitHub', 'Vercel', 'Cursor'] }
+];
 ---
 
 <BaseLayout>
@@ -78,7 +84,41 @@ const tools = [
         </div>
     </section>
 
-    <!-- 2. 博客 (Blog) -->
+    <!-- 2. 技能 (Skills) -->
+    <section id="skills">
+        <h2 class="section-title">
+            <span class="sub">Skills & Tools / 技能与工具</span>
+            <div class="text-group">
+                <a href="/about/" class="section-link">
+                    <span class="en">What I Do</span>
+                    <span class="cn" style="font-size: 1.2rem;">我的技能栈</span>
+                </a>
+            </div>
+        </h2>
+        <div class="skills-showcase">
+            {skills.map(skill => (
+                <div class="skill-block">
+                    <div class="skill-header">
+                        <i class={skill.icon}></i>
+                        <h3 class="skill-cat">{skill.category}</h3>
+                    </div>
+                    <ul class="skill-items">
+                        {skill.items.map(item => (
+                            <li>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+        </div>
+        <div class="skills-cta">
+            <a href="/about/" class="btn-connect">
+                <span class="en">Learn More About Me</span>
+                <span class="cn">了解更多关于我</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 3. 博客 (Blog) -->
     <section id="blog">
         <h2 class="section-title">
             <span class="sub">Thinking / 思考</span>
@@ -162,7 +202,7 @@ const tools = [
 
 <script>
     // 堆叠滚动导航
-    const sectionOrder = ['home', 'blog', 'portfolio', 'share'];
+    const sectionOrder = ['home', 'skills', 'blog', 'portfolio', 'share'];
 
     function getScrollPosition(targetId: string) {
         const index = sectionOrder.indexOf(targetId);

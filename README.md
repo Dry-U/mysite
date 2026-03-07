@@ -12,10 +12,12 @@
 ## 功能特性
 
 - 深色极简设计风格
-- 堆叠式滚动布局
+- 堆叠式滚动布局（桌面端 & 移动端）
 - 双语显示（中英文）
 - 响应式设计
 - 组件化结构
+- 导航栏滚动模糊效果
+- 邮箱一键复制功能
 
 ## 项目结构
 
@@ -62,9 +64,53 @@
 npx wrangler pages deploy dist
 ```
 
-## 关于 node_modules
 
-`node_modules` 文件夹**不需要**被 Git 管理。项目根目录的 `.gitignore` 文件中已经配置了忽略该文件夹。依赖项通过 `package.json` 记录，其他开发者运行 `npm install` 即可安装所有依赖。
+## TODO 待办清单
+
+### 性能优化
+- [ ] 启用 Cloudflare Auto Minify（CSS/JS/HTML）
+- [ ] 配置 Cloudflare Brotli 压缩
+- [ ] 添加图片懒加载（`loading="lazy"`）
+- [ ] 使用 Astro 图片优化组件（`@astrojs/image`）
+- [ ] 添加 WebP/AVIF 图片格式支持
+
+### SEO & 元数据
+- [ ] 添加 Open Graph / Twitter Card 元标签
+- [ ] 生成 `sitemap.xml`
+- [ ] 添加 `robots.txt`
+- [ ] 配置结构化数据（Schema.org JSON-LD）
+- [ ] 添加 canonical URL
+
+### 内容管理
+- [ ] 将博客文章迁移到 Markdown/MDX 文件
+- [ ] 添加文章阅读时间估算
+- [ ] 实现文章标签/分类系统
+- [ ] 添加 RSS 订阅支持（`@astrojs/rss`）
+
+### 交互体验
+- [ ] 添加页面加载过渡动画
+- [ ] 实现键盘导航支持（方向键切换 section）
+- [ ] 添加触摸滑动支持（移动端手势）
+- [ ] 优化移动端 Skills 区域的卡片高度
+
+### Cloudflare 特性
+- [ ] 配置 Cloudflare Analytics 网站分析
+- [ ] 设置 Cloudflare Web Analytics（隐私友好）
+- [ ] 配置边缘缓存规则（Cache Rules）
+- [ ] 启用 Cloudflare Zaraz 管理第三方脚本（可选）
+- [ ] 配置自定义域名（如有）
+
+### 可访问性
+- [ ] 添加 `prefers-reduced-motion` 媒体查询支持
+- [ ] 优化键盘焦点样式
+- [ ] 添加 ARIA 标签到交互元素
+- [ ] 检查颜色对比度（WCAG 2.1 AA）
+
+### 开发体验
+- [ ] 添加 TypeScript 严格模式
+- [ ] 配置 ESLint + Prettier
+- [ ] 添加 pre-commit hooks（Husky）
+- [ ] 设置 GitHub Actions CI/CD
 
 ## 版权
 

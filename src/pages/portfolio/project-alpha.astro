@@ -49,10 +49,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <style>
   .project-detail {
-    padding: 120px 10% 50px;
+    padding: 180px 10% 50px;
     padding-left: 140px;
     min-height: 100vh;
-    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .project-header {
@@ -90,7 +91,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   }
 
   .project-content {
-    max-width: 800px;
+    max-width: none;
   }
 
   .project-section {
@@ -137,7 +138,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   @media (max-width: 768px) {
     .project-detail {
-      padding: 100px 5% 100px;
+      padding: 120px 5% 100px;
     }
 
     .project-title {

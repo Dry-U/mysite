@@ -8,6 +8,7 @@
     "/_astro/*",
     "/favicon.ico",
     "/favicon.svg",
+    "/about",
     "/blog/*",
     "/portfolio/*",
     "/share"
